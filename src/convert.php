@@ -1,20 +1,15 @@
 <?php
 
+function convert_audio(string $input_file, string  $output_file):void
+{
+  $command = "ffmpeg -i \"$input_file\" \"$output_file\"";
 
+  exec($command);
 
-$inputFile = __DIR__ . "/The Dresden Files #05 - Death Masks.m4b";
-$outputFile = __DIR__ . "/The Dresden Files #05 - Death Masks.mp3";
-
-// Construct the FFmpeg command
-$command = "ffmpeg -i \"$inputFile\" \"$outputFile\"";
-
-// Execute the FFmpeg command
-$output = shell_exec($command);
-
-// Check if the conversion was successful
-if (file_exists($outputFile)) {
-    echo "Conversion successful. The MP3 file is located at: $outputFile";
-} else {
+  // Check if the conversion was successful
+  if (file_exists($output_file)) {
+    echo "Conversion successful. The MP3 file is located at: $output_file";
+  } else {
     echo "Conversion failed.";
+  }
 }
-
