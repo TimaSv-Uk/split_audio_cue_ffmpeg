@@ -1,0 +1,15 @@
+{
+    "name": "tima/split-audio-cue-ffmpeg",
+    "autoload": {
+        "psr-4": {
+            "Tima\\SplitAudioCuePhp\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "TimaSv-Uk",
+            "email": "sviridenkotimofei@gmail.com"
+        }
+    ],
+    "require": {}
+}
