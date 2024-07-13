@@ -1,6 +1,6 @@
 <?php
 
-function convert_audio(string $input_file, string  $output_file):void
+function convert_audio(string $input_file, string  $output_file): void
 {
   $command = "ffmpeg -i \"$input_file\" \"$output_file\"";
 

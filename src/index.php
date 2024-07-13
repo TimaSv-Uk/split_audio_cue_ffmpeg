@@ -19,7 +19,7 @@ function convert_to_seconds(string $timestamp): float
   return $total_seconds;
 }
 
-function split_mp3_chunk(string $path_to_mp3_file, string $chapter_title, float $chapter_duration, float $chapter_start_time, string $save_dir)
+function split_mp3_chunk(string $path_to_mp3_file, string $chapter_title, float $chapter_duration, float $chapter_start_time, string $save_dir): void
 {
   // Sanitize file name
   $chapter_title = preg_replace('/[^A-Za-z0-9_\-]/', '_', $chapter_title);
@@ -63,8 +63,6 @@ function main()
     } else {
       $chapter_duration = get_duration($mp3_file_path) - $chapter_start_time;
     }
-
-    print_r("$chapter_title -- $chapter_duration -- $chapter_start_time\n");
 
     split_mp3_chunk($mp3_file_path, $chapter_title, $chapter_duration, $chapter_start_time, $save_dir);
   }
